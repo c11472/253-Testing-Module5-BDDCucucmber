@@ -1,0 +1,30 @@
+TestNG Runner Class Sample Code
+*********************************************************
+Please copy paste in your testNG class and just edit as per your project structure
+**********************************************************************************
+
+
+package TestBDDSample1;
+/*
+ * Here we are trying to execute two feature files out of 10 
+ */
+import org.testng.annotations.Test;
+
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+@CucumberOptions(features={"src/test/java/TestBDDSample1/Bat.feature","src/test/java/TestBDDSample1/Apple.feature"
+		,"src/test/java/TestBDDSample1/Chilly.feature"}
+, 
+glue="TestBDDSample1",
+plugin = {
+		"pretty",
+        "html:target/cucumber-reports/cucumber.html",
+        "json:testdata1/cucumber-reports/CucumberTestReport.json"
+
+            }
+
+)
+public class smoketest1 extends AbstractTestNGCucumberTests
+ {
+  
+ }
